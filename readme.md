@@ -1,19 +1,20 @@
 Google OAuth Authentication Improvements – HTTPS Fixes and Handling of Existing Users
 
-DESCRIPTION:
+## 🚀 Key Improvements
 Three significant improvements have been made to the auth_oauth module to resolve common issues with Google authentication:
 
-Enforcing HTTPS on redirect URLs
-Improved OAuth token validation
-Improved handling of existing users during the login process
+* Enforcing HTTPS on redirect URLs
+* Improved OAuth token validation
+* Improved handling of existing users during the login process
 
-PROBLEMS SOLVED:
+## 🔧 Issues Resolved
 
-Redirect_uri_mismatch error with Google OAuth2
-Authentication fails when user already exists in database
-Insufficient logs for problem diagnosis
-
-CHANGES MADE:
+* 🔒 HTTP URLs being sent to Google OAuth2
+* 👤 Authentication failure with existing users
+* 🌐 Google's `redirect_uri_mismatch` error
+* ✉️ Duplicate email handling
+  
+## 💻 Code Improvements and changes made:
 
 In controllers/main.py - list_providers method:
 
@@ -21,14 +22,13 @@ Added logic to force HTTPS on redirect URL
 Prevents Google rejection for HTTP use
 Maintains compatibility with existing configurations
 
-In models/res_users.py - _auth_oauth_validate method:
+## In models/res_users.py - _auth_oauth_validate method:
 
 Added detailed logging of the validation process
 Better error handling and response validation
 Clearer information about the authentication process
 
-
-In models/res_users.py - _auth_oauth_signin method:
+## In models/res_users.py - _auth_oauth_signin method:
 
 User search by email was implemented in addition to oauth_uid
 Automatic management of existing users
