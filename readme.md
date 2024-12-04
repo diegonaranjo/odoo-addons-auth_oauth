@@ -148,14 +148,11 @@ cd /opt/odoo/addons/    # Custom installation
 # or
 cd /usr/lib/python3/dist-packages/odoo/addons/    # Package installation
 
-# 2. Backup existing module (recommended)
-sudo cp -r auth_oauth auth_oauth_backup
-
-# 3. Replace module files
+# 2. Replace module files
 sudo cp -r /path/to/downloaded/auth_oauth/* auth_oauth/
 
-# 4. Set proper permissions
+# 3. Set proper permissions
 sudo chown -R odoo:odoo auth_oauth/
 
-# 5. Restart Odoo service
+# 4. Restart Odoo service
 sudo systemctl restart odoo
