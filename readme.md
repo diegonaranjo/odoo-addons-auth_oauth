@@ -137,3 +137,25 @@ UPDATED CODE:
                   raise access_denied_exception
 
 ```
+## 🔧 Installation Guide
+
+### Quick Install
+Replace the module files with the content from this repository:
+
+```bash
+# 1. Navigate to your Odoo addons directory (common locations):
+cd /opt/odoo/addons/    # Custom installation
+# or
+cd /usr/lib/python3/dist-packages/odoo/addons/    # Package installation
+
+# 2. Backup existing module (recommended)
+sudo cp -r auth_oauth auth_oauth_backup
+
+# 3. Replace module files
+sudo cp -r /path/to/downloaded/auth_oauth/* auth_oauth/
+
+# 4. Set proper permissions
+sudo chown -R odoo:odoo auth_oauth/
+
+# 5. Restart Odoo service
+sudo systemctl restart odoo
